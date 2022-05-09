@@ -1,3 +1,19 @@
 object SparkReadHdfs extends App {
-  println("Hello")
+
+  import org.apache.spark.sql.SparkSession
+
+  val spark = SparkSession
+    .builder()
+    .appName("Spark read CSV from HDFS")
+    .master("local[*]")
+    .getOrCreate()
+
+  val people = spark
+    .read
+    .option("header", value = true)
+    .option("inferSchema", value = true)
+    .format("csv")
+    .load("hdfs://localhost:9000/input")
+
+  people.show()
 }
