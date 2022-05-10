@@ -12,8 +12,8 @@ object SparkReadHdfs extends App {
     .read
     .option("header", value = true)
     .option("inferSchema", value = true)
-    .format("csv")
-    .load("hdfs://localhost:9000/input")
+    .csv("hdfs://localhost:9000/output/people2.csv")
 
   people.show()
+
 }
