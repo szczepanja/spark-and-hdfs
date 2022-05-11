@@ -12,7 +12,7 @@ object SparkReadHdfs extends App {
     .read
     .option("header", value = true)
     .option("inferSchema", value = true)
-    .csv("hdfs://localhost:9000/output")
+    .text("hdfs://localhost:9000/files")
 
   people.show()
 
