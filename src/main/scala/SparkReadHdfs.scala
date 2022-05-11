@@ -5,7 +5,6 @@ object SparkReadHdfs extends App {
   val spark = SparkSession
     .builder()
     .appName("Spark read CSV from HDFS")
-    .master("local[*]")
     .getOrCreate()
 
   val people = spark
