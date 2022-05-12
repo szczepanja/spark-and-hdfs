@@ -4,7 +4,7 @@ import org.apache.spark.sql.DataFrame
 object SparkReadHdfs {
   def main(args: Array[String]): Unit = {
 
-    val path = "hdfs://localhost:9000/files"
+    val path = "hdfs://localhost:9000/data"
 
     implicit val spark: SparkSession = SparkSession
       .builder()

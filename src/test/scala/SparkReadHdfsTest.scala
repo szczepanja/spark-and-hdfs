@@ -18,7 +18,6 @@ class SparkReadHdfsTest extends AnyFlatSpec with should.Matchers {
     val expected = Seq("HELLO WORLD")
 
     actual should contain theSameElementsAs expected
-
   }
 
 }
